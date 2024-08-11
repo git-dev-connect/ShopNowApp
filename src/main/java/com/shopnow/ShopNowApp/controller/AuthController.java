@@ -1,5 +1,5 @@
 package com.shopnow.ShopNowApp.controller;
-import com.shopnow.ShopNowApp.Config.UserService;
+import com.shopnow.ShopNowApp.Security.UserService;
 import com.shopnow.ShopNowApp.Dto.AuthResponse;
 import com.shopnow.ShopNowApp.Dto.LoginRequest;
 import com.shopnow.ShopNowApp.Dto.SignUpRequest;

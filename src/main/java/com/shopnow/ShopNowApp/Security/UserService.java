@@ -1,13 +1,9 @@
-package com.shopnow.ShopNowApp.Config;
-
+package com.shopnow.ShopNowApp.Security;
 import com.shopnow.ShopNowApp.Entity.User;
-
 import java.util.List;
 import java.util.Optional;
-
 public interface UserService {
 
-    List<User> getUsers();
 
     Optional<User> getUserByUsername(String username);
 
@@ -15,7 +11,6 @@ public interface UserService {
 
     boolean hasUserWithEmail(String email);
 
-    Optional<User> validateAndGetUserByUsername(String username);
 
     User saveUser(User user);
 

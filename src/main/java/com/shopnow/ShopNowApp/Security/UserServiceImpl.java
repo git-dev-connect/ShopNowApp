@@ -1,4 +1,4 @@
-package com.shopnow.ShopNowApp.Config;
+package com.shopnow.ShopNowApp.Security;
 
 import com.shopnow.ShopNowApp.Entity.User;
 import com.shopnow.ShopNowApp.Repo.UserRepository;
@@ -6,9 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
-
 @RequiredArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
@@ -17,11 +15,6 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
 
 
-
-    @Override
-    public List<User> getUsers() {
-        return userRepository.findAll();
-    }
 
     @Override
     public Optional<User> getUserByUsername(String username) {
@@ -38,10 +31,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.existsByEmail(email);
     }
 
-    @Override
-    public Optional<User> validateAndGetUserByUsername(String username) {
-        return getUserByUsername(username);
-    }
 
     @Override
     public User saveUser(User user) {
@@ -49,6 +38,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
+    // future use
     @Override
     public void deleteUser(User user) {
         userRepository.delete(user);
