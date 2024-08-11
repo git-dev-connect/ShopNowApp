@@ -1,14 +1,16 @@
 package com.shopnow.ShopNowApp.Security;
-
-import com.karuppu.prjSync.model.User;
-import com.karuppu.prjSync.service.UserService;
+import com.shopnow.ShopNowApp.Config.UserService;
+import com.shopnow.ShopNowApp.Entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import java.util.List;
 
 @RequiredArgsConstructor
