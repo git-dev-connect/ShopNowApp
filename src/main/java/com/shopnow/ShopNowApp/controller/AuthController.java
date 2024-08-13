@@ -14,7 +14,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @RestController
 @Slf4j
-@RequestMapping("/auth")
 public class AuthController {
 
     private final UserService userService;
@@ -25,6 +24,7 @@ public class AuthController {
         Optional<User> userOptional = userService.validUsernameAndPassword(loginRequest.getUsername(), loginRequest.getPassword());
         if (userOptional.isPresent()) {
             User user = userOptional.get();
+            log.info("PRESENT");
             return ResponseEntity.ok(new AuthResponse(user.getId(), user.getName()));
         }
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();

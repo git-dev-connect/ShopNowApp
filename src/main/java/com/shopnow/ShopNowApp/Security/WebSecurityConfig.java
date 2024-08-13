@@ -31,6 +31,7 @@ public class WebSecurityConfig {
         return http
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
                         .requestMatchers("/public/**", "/auth/**").permitAll()
+                        .requestMatchers("/authenticate").permitAll()
 //                        .requestMatchers("/ws/**").permitAll()
 //                        .requestMatchers("/app/**").permitAll()
 //                        .requestMatchers("/app/sendMessage").permitAll()
