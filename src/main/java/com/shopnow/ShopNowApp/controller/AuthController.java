@@ -34,6 +34,13 @@ public class AuthController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/signup")
     public AuthResponse signUp(@RequestBody SignUpRequest signUpRequest) {
+
+        System.out.println("SignUpRequest with parameters");
+        System.out.println("username: "+ signUpRequest.getUsername());
+        System.out.println("PWD: "+ signUpRequest.getPassword());
+        System.out.println("email: "+ signUpRequest.getEmail());
+        System.out.println("name: "+ signUpRequest.getName());
+
         if (userService.hasUserWithUsername(signUpRequest.getUsername())) {
             throw new RuntimeException(String.format("Username %s is already been used", signUpRequest.getUsername()));
         }

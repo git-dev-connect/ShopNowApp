@@ -32,6 +32,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
                         .requestMatchers("/public/**", "/auth/**").permitAll()
                         .requestMatchers("/authenticate").permitAll()
+                        .requestMatchers("signup").permitAll()
 //                        .requestMatchers("/ws/**").permitAll()
 //                        .requestMatchers("/app/**").permitAll()
 //                        .requestMatchers("/app/sendMessage").permitAll()
