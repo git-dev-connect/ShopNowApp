@@ -20,13 +20,14 @@ public class AuthController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest loginRequest) {
-        System.out.println("Hitting");
+        System.out.println("login api request hitted with username:"+ loginRequest.getUsername() +" & Password: "+loginRequest.getPassword());
         Optional<User> userOptional = userService.validUsernameAndPassword(loginRequest.getUsername(), loginRequest.getPassword());
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            log.info("PRESENT");
+            log.info("User present");
             return ResponseEntity.ok(new AuthResponse(user.getId(), user.getName()));
         }
+        log.info("User Not Present - UNAUTHORIZED USER");
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 
