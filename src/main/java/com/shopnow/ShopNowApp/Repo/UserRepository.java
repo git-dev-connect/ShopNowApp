@@ -1,4 +1,5 @@
 package com.shopnow.ShopNowApp.Repo;
+import com.shopnow.ShopNowApp.Entity.Products;
 import com.shopnow.ShopNowApp.Entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -18,6 +19,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query("SELECT e.name FROM User e")
     List<String> getAllEmp();
+
 }
 //
 //{emp.map((employee, index) => (
