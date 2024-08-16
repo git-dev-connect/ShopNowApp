@@ -1,9 +1,7 @@
 package com.shopnow.ShopNowApp.Entity;
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 @Data
 @NoArgsConstructor
 @Entity
@@ -12,14 +10,11 @@ import lombok.NoArgsConstructor;
         @UniqueConstraint(columnNames = "email")
 })
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String username;
     private String password;
     private String name;
     private String email;
-
 }

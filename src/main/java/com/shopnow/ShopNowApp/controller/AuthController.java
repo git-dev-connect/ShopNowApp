@@ -24,10 +24,10 @@ public class AuthController {
         Optional<User> userOptional = userService.validUsernameAndPassword(loginRequest.getUsername(), loginRequest.getPassword());
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            log.info("User present");
+            logger.info("User present");
             return ResponseEntity.ok(new AuthResponse(user.getId(), user.getName()));
         }
-        log.info("User Not Present - UNAUTHORIZED USER");
+        logger.info("User Not Present - UNAUTHORIZED USER");
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 
